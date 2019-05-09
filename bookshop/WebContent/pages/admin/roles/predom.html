@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>配置权限-网上书店</title>
+<meta charset="utf-8">
+<!--全局CSS-->
+<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/myStyle.css">
+<!--私有CSS-->
+<!-- <link rel="stylesheet" href="/bookshop/plugins/myModal/myModal.css"> --> 
+
+</head>
+<body>
+    <!-- 页面顶部导航条 -->
+	<div class="row panel titlePanel">
+		<div class="col-md-12">
+			<div class="col-md-3">
+				<h3>
+					<i class="fa fa-dashboard"></i> 角色管理
+				</h3>
+			</div>
+			<div class="col-md-6">
+				<div style="text-align: center;"></div>
+			</div>
+			<div class="col-md-3">
+				<ul class="functionTip app-breadcrumb breadcrumb">
+					<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+					<li class="breadcrumb-item"><a href="">角色管理 / 配置权限</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    <!-- 页面内容体 -->
+    
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title" style="text-align:left;">
+							<i class="fa fa-hand-o-right" aria-hidden="true"></i>角色基本信息
+						</h4>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-6 form-inline">
+							<div class="col-md-3" style="text-align: right;"><label class="control-label-required">名称：</label></div>
+							<div class="col-md-9" style="text-align: left;"><label class="control-label-norequired">超级管理员</label></div>
+						 </div>
+						 
+						 <div class="form-group col-md-6 form-inline">
+							<div class="col-md-3" style="text-align: right;"><label class="control-label-required">职责：</label></div>
+							<div class="col-md-9" style="text-align: left;"><label class="control-label-norequired">操作管理所有功能</label></div>
+						  </div>
+					    
+						
+					</div>
+				</div>
+				
+			<form  action="/bookshop/pages/admin/shares/success.html">
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title" style="text-align:left;">
+							<a data-toggle="collapse" data-parent="#accordion" 
+							   href="#collapseClasses">
+								<i class="fa fa-hand-o-right" aria-hidden="true"></i>配置能用的功能
+							</a>
+						</h4>
+					</div>
+					<div id="collapseClasses" class="panel-collapse collapse in">
+						<div class="panel-body">
+						  <table class="table table-hover table-bordered table-striped" id="dataTable">
+			                <thead>
+			                  <tr>
+			                    <th>选择</th>
+			                    <th>名称</th>
+			                    <th>URI</th>
+			                    <th>说明</th>
+			                  </tr>
+			                </thead>
+			                <tbody>
+			                  <tr>
+			                    <td><input type="checkbox" value=""></td>
+			                    <td>订单列表</td>
+			                    <td>/Admin/Order/List</td>
+			                    <td>教师列表</td>
+			                  </tr>
+			                 <tr>
+			                   <td><input type="checkbox" value=""></td>
+			                   <td>订单列表</td>
+			                   <td>/Admin/Order/List</td>
+			                   <td>教师列表</td>
+			                 </tr>
+			                  <tr>
+			                    <td><input type="checkbox" value=""></td>
+			                    <td>订单列表</td>
+			                    <td>/Admin/Order/List</td>
+			                    <td>教师列表</td>
+			                  </tr>
+			                  
+			                </tbody>
+			              </table>
+						</div>
+						<div class="panel-footer">
+					    	 <div class="row paginationBox">
+								<div class="col-md-4">
+									<div class="paginationInfo">显示第 1 至 10 项结果，共 57 项</div>
+								</div>
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<ul class="pagination">
+									    <li><a href="#">&laquo;</a></li>
+									    <li class="active"><a href="#">1</a></li>
+									    <li><a href="#">2</a></li>
+									    <li><a href="#">3</a></li>
+									    <li><a href="#">4</a></li>
+									    <li><a href="#">5</a></li>
+									    <li><a href="#">&raquo;</a></li>
+									  </ul>
+								</div>
+							</div>
+					    </div>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="panel panel-default">
+					<div class="panel-footer" style="text-align: center;">
+							 <button type="button" class="btn btn-primary" onclick="navTo('/bookshop/pages/admin/roles/list.html')"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
+							 <button type="submit" class="btn btn-warning"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button>
+					</div>
+				</div>
+			</form>
+			
+			</div>
+			
+		</div>
+	</div>
+
+	<!--全局JS -->
+	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
+	<script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
+	<script src="/bookshop/js/admin/share/share.js"></script>
+	
+	<!--私有JS-->
+
+	<script type="text/javascript">
+    
+        
+      
+    </script>
+</body>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>主面板-bookshop</title>
+<meta charset="utf-8">
+<!--全局CSS-->
+<link rel="stylesheet" type="text/css"
+	href="/bookshop/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="/bookshop/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="/bookshop/css/admin/share/myStyle.css">
+<!--私有CSS-->
+<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/private/main/main.css">
+<title>主页-bookshop</title>
+</head>
+<body>
+    <!-- 页面顶部导航条 -->
+	<div class="row panel titlePanel">
+		<div class="col-md-12">
+			<div class="col-md-3">
+				<h3>
+					<i class="fa fa-dashboard"></i> 主面板
+				</h3>
+			</div>
+			<div class="col-md-6">
+				<div style="text-align: center;"></div>
+			</div>
+			<div class="col-md-3">
+				<ul class="functionTip app-breadcrumb breadcrumb">
+					<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+					<li class="breadcrumb-item"><a href="">网上书店 / 首页</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-7">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">快捷方式</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="widget-small info coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>职位列表</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small warning coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>人员列表</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small danger coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>功能列表</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small info coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>图书列表</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small warning coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>新增职位</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small danger coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>新增人员</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small info coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>新增功能</h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="widget-small warning coloured-icon">
+									<i class="icon fa fa-users fa-3x"></i>
+									<div class="info">
+										<h4>新增图书</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">版本信息</h3>
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<td>当前版本</td>
+									<td>v1.2.1 std <a>更新日志</a></td>
+								</tr>
+								<tr>
+									<td>公司名称</td>
+									<td>成都东软学院</td>
+								</tr>
+								<tr>
+									<td>开发团队</td>
+									<td>张小华</td>
+								</tr>
+								<tr>
+									<td>客服电话</td>
+									<td>02882878091</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-7">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">图书统计</h3>
+					</div>
+					<div class="panel-body" style="padding-left: 0px;padding-right: 0px;">
+						<div class="row">
+							<div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+								<div id="teacherCarousel" class="carousel slide">
+									<!-- 轮播（Carousel）指标 -->
+									<ol class="carousel-indicators">
+										<li data-target="#teacherCarousel" data-slide-to="0" class="active"></li>
+										<li data-target="#teacherCarousel" data-slide-to="1"></li>
+									</ol>   
+									<!-- 轮播（Carousel）项目 -->
+									<div class="carousel-inner">
+										<div class="item active">
+											<div id="teacherBarId" style="width: 450px;height:300px;margin-left: 80px;"></div>
+										</div>
+										<div class="item ">
+											<div id="teacherPieId" style="width: 450px;height:300px; margin-left: 80px;"></div>
+								
+										</div>
+										
+									</div>
+									
+								</div> 
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">图书统计数据</h3>
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-striped">
+						    <thead>
+							    <tr>
+							      <th>团队</th>
+							      <th>数量</th>
+							      <th>副教授</th>
+							      <th>讲师</th>
+							      <th>助教</th>
+							      <th>素质教师</th>
+							    </tr>
+						    </thead>
+							<tbody>
+								<tr>
+									<td>软工团队</td>
+									<td>2</td>
+									<td>8</td>
+									<td>2</td>
+									<td>2</td>
+									<td>8</td>
+								</tr>
+								<tr>
+									<td>数科团队</td>
+									<td>1</td>
+									<td>6</td>
+									<td>2</td>
+									<td>2</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td>系办公室</td>
+									<td>2</td>
+									<td>2</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr class="success">
+									<td>小计</td>
+									<td>4</td>
+									<td>16</td>
+									<td>8</td>
+									<td>5</td>
+									<td>12</td>
+								</tr>
+								<tr class="warning">
+									<td>总计</td>
+									<td colspan="5"><h5 style="text-align:center;">40人</h5></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-7">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">药品统计</h3>
+					</div>
+					<div class="panel-body" style="padding-left: 0px;padding-right: 0px;">
+						<div class="row">
+							<div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">
+								<div id="studentCarousel" class="carousel slide">
+									<!-- 轮播（Carousel）指标 -->
+									<ol class="carousel-indicators">
+										<li data-target="#studentCarousel" data-slide-to="0" class="active"></li>
+										<li data-target="#studentCarousel" data-slide-to="1"></li>
+									</ol>   
+									<!-- 轮播（Carousel）项目 -->
+									<div class="carousel-inner">
+										<div class="item active">
+											<div id="studentBarId" style="width: 450px;height:300px;margin-left: 80px;"></div>
+										</div>
+										<div class="item ">
+											<div id="studentPieId" style="width: 450px;height:300px; margin-left: 80px;"></div>
+								
+										</div>
+										
+									</div>
+									
+								</div> 
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">药品统计数据</h3>
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-striped">
+						    <thead>
+							    <tr>
+							      <th>部门</th>
+							      <th>一本</th>
+							      <th>二本</th>
+							      <th>三本</th>
+							      <th>专科</th>
+							      
+							    </tr>
+						    </thead>
+							<tbody>
+								<tr>
+									<td>软工团队</td>
+									<td>100</td>
+									<td>180</td>
+									<td>100</td>
+									<td>100</td>
+									
+								</tr>
+								<tr>
+									<td>数科团队</td>
+									<td>0</td>
+									<td>240</td>
+									<td>100</td>
+									<td>0</td>
+									
+								</tr>
+								
+								<tr class="success">
+									<td>小计</td>
+									<td>100</td>
+									<td>420</td>
+									<td>200</td>
+									<td>100</td>
+									
+								</tr>
+								<tr class="warning">
+									<td>总计</td>
+									<td colspan="5"><h5 style="text-align:center;">820人</h5></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--全局JS-->
+	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
+	 <script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
+	
+	<!--私有JS-->
+	<script src="/bookshop/plugins/eChart/echarts.min.js"></script>
+	<script src="/bookshop/js/admin/private/home.js"></script>
+
+	<script type="text/javascript">
+    
+        
+      
+    </script>
+</body>

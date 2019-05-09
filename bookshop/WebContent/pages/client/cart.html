@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Koparion – Book Shop Bootstrap 4 Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Favicon -->
+    	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    
+    	<!-- all css here -->
+    	<!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href="/bookshop/css/client/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
+    	
+    	<!-- owl.carousel css -->
+        <link rel="stylesheet" href="/bookshop/css/client/owl.carousel.css">
+    	<!-- font-awesome css -->
+        <link rel="stylesheet" href="/bookshop/css/client/font-awesome.min.css">
+    	<!-- style css -->
+    	<link rel="stylesheet" href="/bookshop/css/client/style.css">
+    	
+    </head>
+    <body class="home-4">
+		<!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		
+		<!-- Add your site or application content here -->
+		<!-- header-area-start -->
+		<iframe id="headerFrame" src="/bookshop/pages/client/share/header.html" width="100%" height="250px" frameborder="no" border="0" marginwidth="0" marginheight=" 0" scrolling="no" allowtransparency="yes" 
+		style="border-left-width: 0px;
+			    border-right-width: 0px;
+			    border-top-width: 0px;
+			    margin-left: 0px;
+			    margin-right: 0px;
+			    padding-right: 5px;
+			    padding-left: 5px;
+			    border-bottom-width: 0px; z-index: 1;">
+		</iframe>
+		<!-- header-area-end -->
+		
+		<!-- cart-main-area-start -->
+		<div class="cart-main-area mb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<form action="#">
+							<div class="table-content table-responsive">
+								<table>
+									<thead>
+										<tr>
+											<th class="product-thumbnail">图书图片</th>
+											<th class="product-name">图书名称</th>
+											<th class="product-price">价格</th>
+											<th class="product-quantity">数量</th>
+											<th class="product-subtotal">小计</th>
+											<th class="product-remove">移除</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="product-thumbnail"><a href="#"><img src="/bookshop/img/client/cart/1.jpg" alt="man" /></a></td>
+											<td class="product-name"><a href="#">Vestibulum suscipit</a></td>
+											<td class="product-price"><span class="amount">&yen;165.00</span></td>
+											<td class="product-quantity"><input type="number" value="1"></td>
+											<td class="product-subtotal">&yen;165.00</td>
+											<td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+										</tr>
+										<tr>
+											<td class="product-thumbnail"><a href="#"><img src="/bookshop/img/client/cart/2.jpg" alt="man" /></a></td>
+											<td class="product-name"><a href="#">Vestibulum dictum magna</a></td>
+											<td class="product-price"><span class="amount">&yen;50.00</span></td>
+											<td class="product-quantity"><input type="number" value="1"></td>
+											<td class="product-subtotal">&yen;50.00</td>
+											<td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+		            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+		                <div class="buttons-cart mb-30">
+		                    <ul>
+		                        <li><a href="#">更新购物车</a></li>
+		                        <li><a href="/bookshop/index.html">继续购物</a></li>
+		                    </ul>
+		                </div>
+		                
+		            </div>
+		            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+		                <div class="cart_totals">
+		                    <h2>购物 总计</h2>
+		                    <table>
+		                        <tbody>
+		                            <tr class="cart-subtotal">
+		                                <th>总价</th>
+		                                <td>
+		                                    <span class="amount">&yen;215.00</span>
+		                                </td>
+		                            </tr>
+		                            <tr class="shipping">
+		                                <th>运费</th>
+		                                <td>
+		                                    <ul id="shipping_method">
+		                                        <li>
+		                                            <input type="radio" name="shippingType">
+		                                            <label>
+		                                                Flat Rate:
+		                                                <span class="amount">&yen;7.00</span>
+		                                            </label>
+		                                        </li>
+		                                        <li>
+		                                            <input type="radio" name="shippingType">
+		                                            <label> Free Shipping </label>
+		                                        </li>
+		                                    </ul>
+		                                    <a href="#">Calculate Shipping</a>
+		                                </td>
+		                            </tr>
+		                            <tr class="order-total">
+		                                <th>应付</th>
+		                                <td>
+		                                    <strong>
+		                                        <span class="amount">&yen;215.00</span>
+		                                    </strong>
+		                                </td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+		                    <div class="wc-proceed-to-checkout">
+		                        <a href="#">付 款</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+		<!-- cart-main-area-end -->
+		
+		<!-- footer-area-start -->
+		<iframe id="footerFrame" src="/bookshop/pages/client/share/footer.html" width="100%" height="300px" frameborder="no" border="0" marginwidth="0" marginheight=" 0" scrolling="no" allowtransparency="yes" 
+		style="border-left-width: 0px;
+			    border-right-width: 0px;
+			    border-top-width: 0px;
+			    margin-left: 0px;
+			    margin-right: 0px;
+			    padding-right: 5px;
+			    padding-left: 5px;
+			    border-bottom-width: 0px;">
+		</iframe>
+		<!-- footer-area-end -->
+		
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		<script src="/bookshop/js/client/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="/bookshop/js/client/bootstrap.min.js"></script>
+		<!-- owl.carousel js -->
+		<script src="/bookshop/js/client/owl.carousel.min.js"></script>
+		<!-- meanmenu js -->
+		<script src="/bookshop/js/client/jquery.meanmenu.js"></script>
+		<!-- wow js -->
+		<script src="/bookshop/js/client/wow.min.js"></script>
+		<!-- jquery.parallax-1.1.3.js -->
+		<script src="/bookshop/js/client/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countdown.min.js -->
+		<script src="/bookshop/js/client/jquery.countdown.min.js"></script>
+		<!-- jquery.flexslider.js -->
+		<script src="/bookshop/js/client/jquery.flexslider.js"></script>
+		<!-- chosen.jquery.min.js -->
+		<script src="/bookshop/js/client/chosen.jquery.min.js"></script>
+		<!-- jquery.counterup.min.js -->
+		<script src="/bookshop/js/client/jquery.counterup.min.js"></script>
+		<!-- waypoints.min.js -->
+		<script src="/bookshop/js/client/waypoints.min.js"></script>
+		<!-- plugins js -->
+		<script src="/bookshop/js/client/plugins.js"></script>
+		<!-- main js -->
+		<script src="/bookshop/js/client/main.js"></script>
+		
+		<script type="text/javascript">
+			$("#registerAId").click(function(e){
+				$("#registerFormId").submit();
+			});
+		</script>
+	</body>
+</html>
