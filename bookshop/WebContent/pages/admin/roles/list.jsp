@@ -1,14 +1,18 @@
+<%@page import="cn.edu.nsu.bookshop.db.last.roles.Roles"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.roles.RolesDAO"%>
+<%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>职位管理-网上书店系统</title>
 <meta charset="utf-8">
 <!--全局CSS-->
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/myStyle.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/myStyle.css">
 <!--私有CSS-->
-<link rel="stylesheet" href="/bookshop/plugins/myModal/myModal.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/myModal/myModal.css">
 </head>
 
 <body>
@@ -57,24 +61,24 @@
 	                  </tr>
 	                </thead>
 	                <tbody>
-	                  <tr>
-	                    <td>超级管理员</td>
-	                    <td>操作管理所有功能</td>
+					<%
+	                RolesDAO rolesDAO = new RolesDAO();
+					ArrayList<Roles> roles = rolesDAO.getAll();
+	                for(int i=0;i<roles.size();i++){
+	                	Roles role = roles.get(i);
+	                	%>
+	                	<tr>
+	                    <td><%=role.getRoles_name() %></td>
+	                    <td><%=role.getRoles_note() %></td>
 	                    <td>
-	                    	<a href="/bookshop/pages/admin/roles/detail.html"><button class="btn btn-success" type="button">详情</button></a>
-	                        <a href="/bookshop/pages/admin/roles/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
-							<a href="/bookshop/pages/admin/roles/predom.html"><button class="btn btn-primary" type="button">配置权限</button></a>
+	                    	<a href="<%=request.getContextPath()%>/pages/admin/roles/detail.html"><button class="btn btn-success" type="button">详情</button></a>
+	                        <a href="<%=request.getContextPath()%>/pages/admin/roles/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
+							<a href="<%=request.getContextPath()%>/pages/admin/roles/predom.html"><button class="btn btn-primary" type="button">配置权限</button></a>
 						</td>
 	                  </tr>
-	                 <tr>
-	                   <td>图书管理员</td>
-	                   <td>操作管理图书和图书类别相关功能</td>
-	                   <td>
-							<a href="/bookshop/pages/admin/roles/detail.html"><button class="btn btn-success" type="button">详情</button></a>
-	                       <a href="/bookshop/pages/admin/roles/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
-							<a href="/bookshop/pages/admin/roles/predom.html"><button class="btn btn-primary" type="button">配置权限</button></a>
-	                   </td>
-	                 </tr>
+	                	<% 
+	                }
+					%>
 	                  
 	                  
 	                </tbody>
@@ -123,11 +127,11 @@
 	
 
 	<!--全局JS-->
-	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
-	 <script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
-	<script src="/bookshop/js/admin/share/share.js"></script>
+	<script src="<%=request.getContextPath()%>/js/admin/share/jquery-3.2.1.min.js"></script>
+	 <script src="<%=request.getContextPath()%>/js/admin/share/bootstrap.min.js"></script> 
+	<script src="<%=request.getContextPath()%>/js/admin/share/share.js"></script>
 	<!--私有JS-->
-	<script src="/bookshop/plugins/myModal/myModal.js"></script>
+	<script src="<%=request.getContextPath()%>/plugins/myModal/myModal.js"></script>
 
 	<script type="text/javascript">
     

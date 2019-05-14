@@ -1,14 +1,18 @@
+<%@page import="cn.edu.nsu.bookshop.db.last.functions.Functions"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.functions.FunctionsDAO"%>
+<%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>功能管理-网上书店</title>
 <meta charset="utf-8">
 <!--全局CSS-->
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/myStyle.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/myStyle.css">
 <!--私有CSS-->
-<link rel="stylesheet" href="/bookshop/plugins/myModal/myModal.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/myModal/myModal.css">
 </head>
 
 <body>
@@ -95,18 +99,26 @@
 			                  </tr>
 			                </thead>
 			                <tbody>
-			                  <tr>
-			                    <td>教师列表</td>
-			                    <td>/teacher!list.action</td>
-			                    <td>教师列表</td>
-			                    <td>
-			                    	<a href="/bookshop/pages/admin/functions/detail.html"><button class="btn btn-success" type="button">详情</button></a>
-			                        <a href="/bookshop/pages/admin/functions/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
-			                        <a href="/bookshop/pages/admin/functions/predom.html"><button class="btn btn-primary" type="button">配置权限</button></a>
-			                        <a href="/bookshop/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
+			                <% 
+			                FunctionsDAO functionsDAO = new FunctionsDAO();
+			                ArrayList<Functions> functions = functionsDAO.getAll();
+			                for(int i=0; i<functions.size(); i++){
+			                	Functions function = functions.get(i);
+			                	%>
+			                	<tr>
+			                    	<td><%= function.getFunctions_name()%></td>
+			               	    	<td><%= function.getFunctions_URI()%></td>
+			               	    	<td><%= function.getFunctions_note()%></td>
+			                    	<td>
+			                    	<a href="<%=request.getContextPath()%>/pages/admin/functions/detail.html"><button class="btn btn-success" type="button">详情</button></a>
+			                        <a href="<%=request.getContextPath()%>/pages/admin/functions/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
+			                        <a href="<%=request.getContextPath()%>/pages/admin/functions/predom.html"><button class="btn btn-primary" type="button">配置权限</button></a>
+			                        <a href="<%=request.getContextPath()%>/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
 			                    </td>
 			                  </tr>
-			                 
+			                  <% 
+			                }
+			                 %>
 			                </tbody>
 			              </table>
               
@@ -175,11 +187,11 @@
 	
 
 	<!--全局JS-->
-	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
-	 <script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
-	<script src="/bookshop/js/admin/share/share.js"></script>
+	<script src="<%=request.getContextPath()%>/js/admin/share/jquery-3.2.1.min.js"></script>
+	 <script src="<%=request.getContextPath()%>/js/admin/share/bootstrap.min.js"></script> 
+	<script src="<%=request.getContextPath()%>/js/admin/share/share.js"></script>
 	<!--私有JS-->
-	<script src="/bookshop/plugins/myModal/myModal.js"></script>
+	<script src="<%=request.getContextPath()%>/plugins/myModal/myModal.js"></script>
 
 	<script type="text/javascript">
     
