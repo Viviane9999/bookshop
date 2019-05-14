@@ -1,14 +1,18 @@
+<%@page import="cn.edu.nsu.bookshop.db.last.users.Users"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.users.UsersDAO"%>
+<%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>人员管理-网上书店</title>
 <meta charset="utf-8">
 <!--全局CSS-->
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/myStyle.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/admin/share/myStyle.css">
 <!--私有CSS-->
-<link rel="stylesheet" href="/bookshop/plugins/myModal/myModal.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/myModal/myModal.css">
 </head>
 
 <body>
@@ -60,22 +64,34 @@
 	                  </tr>
 	                </thead>
 	                <tbody>
-	                  <tr>
+	                <%
+	                //从DB的users表中查询出所有记录
+	                UsersDAO usersDAO = new UsersDAO();
+	                ArrayList<Users> users = usersDAO.getAll();
+	                //显示查询得到的数据
+	                for(int i=0;i<users.size();i++){
+	                	Users user = users.get(i);
+	                	%>
+	                	<tr>
 						<td>
 							<a href="#" rel="rs-dialog" data-target="bigPicModal" title="点击看大图">
-								<img src="/bookshop/img/admin/portrait.jpg" class="img-thumbnail" alt="头像" width="50" height="50">
+								<img src="<%=request.getContextPath()%><%=user.getUsers_portraitImg() %>" class="img-thumbnail" alt="头像" width="50" height="50">
 							</a>
 						</td>
-	                    <td>张小华</td>
-						<td>男</td>
-	                    <td>超级管理员</td>
-	                    <td>610404197310101234</td>
-						<td>13668270601</td>
+	                    <td><%=user.getUsers_name() %></td>
+						<td><%=user.getUsers_sex() %></td>
+	                    <td><%=user.getRoles_id() %></td>
+	                    <td><%=user.getUsers_idNum() %></td>
+						<td><%=user.getUsers_mobile() %></td>
 	                    <td>
-	                        <a href="/bookshop/pages/admin/users/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
-							<a href="/bookshop/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
+	                        <a href="<%=request.getContextPath()%>/pages/admin/users/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
+							<a href="<%=request.getContextPath()%>/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
 	                    </td>
-	                  </tr>
+	                  	</tr>
+	                	<% 
+	                }
+					%>
+	                  
 	                  
 	                  </tr>
 	                  
@@ -119,7 +135,7 @@
 				<div class="rs-dialog-body">
 					<div class="row">
 						<div class="col-md-12" style="text-align:center;">
-							<img src="/bookshop/img/admin/university.jpg" alt="头像" width="400" height="400">
+							<img src="<%=request.getContextPath()%>/img/admin/university.jpg" alt="头像" width="400" height="400">
 						</div>
 					</div>
 				</div>
@@ -197,13 +213,13 @@
 
 
 	<!--全局JS-->
-	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
-	 <script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
-	<script src="/bookshop/js/admin/share/share.js"></script>
-	<script src="/bookshop/js/admin/share/cityDrop.js"></script>
+	<script src="<%=request.getContextPath()%>/js/admin/share/jquery-3.2.1.min.js"></script>
+	 <script src="<%=request.getContextPath()%>/js/admin/share/bootstrap.min.js"></script> 
+	<script src="<%=request.getContextPath()%>/js/admin/share/share.js"></script>
+	<script src="<%=request.getContextPath()%>/js/admin/share/cityDrop.js"></script>
 	
 	<!--私有JS-->
-	<script src="/bookshop/plugins/myModal/myModal.js"></script>	
+	<script src="<%=request.getContextPath()%>/plugins/myModal/myModal.js"></script>	
 	
 	<script type="text/javascript">
     
