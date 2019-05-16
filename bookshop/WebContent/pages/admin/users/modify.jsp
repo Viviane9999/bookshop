@@ -1,3 +1,9 @@
+<%@page import="cn.edu.nsu.bookshop.db.last.roles.Roles"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.roles.RolesDAO"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.users.Users"%>
+<%@page import="cn.edu.nsu.bookshop.db.last.users.UsersDAO"%>
+<%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,14 +56,26 @@
 					<div id="collapse1" class="panel-collapse collapse in">
 						<div class="panel-body">
 			              	<div class="col-md-12 row">
+			              	<%
+			              		// 从user表中查询修改的用户
+			              		String users_idStr = request.getParameter("users_id");
+			              		int users_id = Integer.parseInt(users_idStr);
+			              		UsersDAO usersDAO = new UsersDAO();
+			              		Users user = usersDAO.getById(users_id);
+								// 显示要修改的用户
+								
+			              	%>
+			              	
+			              	
+			              	
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">姓名</label>
-								  <input class="form-control" type="text" placeholder="请输入人员的姓名">
+								  <input class="form-control" type="text" name="user_name" value="<%=user.getUsers_name() %>" placeholder="请输入人员的姓名">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">性别</label>
-								  <select class="form-control">
+								  <select class="form-control" name="roles_id">
 								       <option>男</option>
 								       <option>女</option>
 								  </select>			
@@ -66,30 +84,38 @@
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">职务</label>
 								  <select class="form-control">
-								       <option>超级管理员</option>
-									   <option>图书管理员</option>
-								       <option>财务管理员</option>
+								  <%
+								  RolesDAO rolesDAO = new RolesDAO();
+								  ArrayList<Roles> roles = rolesDAO.getAll();
+								  for(int i = 0; i < roles.size(); i++){
+									  Roles role = roles.get(i);
+									  %>
+									  <option value="<%=role.getRoles_id() %>" <%=(user.getRoles_id()==role.getRoles_id())?"selected":"" %>><%=role.getRoles_name() %></option>
+									  <% 
+								  }
+								  %>
+								  
 								  </select>			
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">身份<br>证号</label>
-								  <input class="form-control" type="text" placeholder="请输入人员的省份证号码">
+								  <input class="form-control" type="text" name="users_idNum" value="<%=user.getUsers_idNum() %>" placeholder="请输入人员的省份证号码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">手机</label>
-								  <input class="form-control" type="text" placeholder="请输入人员的手机号码">
+								  <input class="form-control" type="text" name="users_mobile" value="<%=user.getUsers_mobile() %>" placeholder="请输入人员的手机号码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 									<label class="control-label-required">地址</label>
-									<textarea class="form-control" rows="4" cols="40" placeholder="请输入人员的地址"></textarea>
+									<textarea class="form-control" rows="4" cols="40" name="users_address" placeholder="请输入人员的地址"><%=user.getUsers_address() %></textarea>
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">邮编</label>
-								  <input class="form-control" type="text" placeholder="请输入人员的邮政编码">
+								  <input class="form-control" type="text" name="users_postcode" value="<%=user.getUsers_postcode() %>" placeholder="请输入人员的邮政编码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >

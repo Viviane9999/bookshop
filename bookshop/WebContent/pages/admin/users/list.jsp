@@ -84,7 +84,7 @@
 	                    <td><%=user.getUsers_idNum() %></td>
 						<td><%=user.getUsers_mobile() %></td>
 	                    <td>
-	                        <a href="<%=request.getContextPath()%>/pages/admin/users/modify.html"><button class="btn btn-warning" type="button">修改</button></a>
+	                        <a href="<%=request.getContextPath()%>/pages/admin/users/modify.jsp?users_id=<%=user.getUsers_id() %>"><button class="btn btn-warning" type="button">修改</button></a>
 							<a href="<%=request.getContextPath()%>/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
 	                    </td>
 	                  	</tr>
