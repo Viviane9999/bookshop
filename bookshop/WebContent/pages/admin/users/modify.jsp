@@ -10,11 +10,11 @@
 <title>修改人员-网上书店</title>
 <meta charset="utf-8">
 <!--全局CSS-->
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/bookshop/css/admin/share/myStyle.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/admin/share/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/admin/share/myStyle.css">
 <!--私有CSS-->
-<link href="/bookshop/plugins/datetimePicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="<%=request.getContextPath() %>/plugins/datetimePicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
 </head>
 <body>
@@ -41,7 +41,7 @@
     
 	<div class="row">
 	   <div class="col-md-12">
-		  <form  action="/bookshop/pages/admin/shares/success.html">
+		  <form  action="<%=request.getContextPath() %>/pages/admin/users/modifySuccess.jsp" method="post">
 			  			<div class="panel-group" id="accordion">
 				
 				<div class="panel panel-default">
@@ -70,20 +70,27 @@
 			              	
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">姓名</label>
-								  <input class="form-control" type="text" name="user_name" value="<%=user.getUsers_name() %>" placeholder="请输入人员的姓名">
+								  <input class="form-control" type="text" name="users_name" value="<%=user.getUsers_name() %>" placeholder="请输入人员的姓名">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
+								  <label class="control-label-required">密码</label>
+								  <input class="form-control" type="password" name="users_password" value="<%=user.getUsers_password() %>" placeholder="请输入人员的密码">
+								</div>
+								
+								
+								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">性别</label>
-								  <select class="form-control" name="roles_id">
-								       <option>男</option>
-								       <option>女</option>
+								  <select class="form-control" name="users_sex">
+								  
+								       <option value="男" <%=(user.getUsers_sex().equals("男"))?"selected":"" %>>男</option>
+								       <option value="女" <%=(user.getUsers_sex().equals("女"))?"selected":"" %>>女</option>
 								  </select>			
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">职务</label>
-								  <select class="form-control">
+								  <select class="form-control" name="roles_id">
 								  <%
 								  RolesDAO rolesDAO = new RolesDAO();
 								  ArrayList<Roles> roles = rolesDAO.getAll();
@@ -133,7 +140,8 @@
 			
 			   <div class="panel panel-default">
 					<div class="panel-footer" style="text-align: center;">
-							 <button type="button" class="btn btn-primary" onclick="navTo('/bookshop/pages/admin/users/list.html')"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
+							 <button type="button" class="btn btn-primary" onclick="navTo('<%=request.getContextPath() %>/pages/admin/users/list.jsp')"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
+							 <input class="form-control" type="hidden" name="users_id" value="<%=user.getUsers_id() %>">
 							 <button type="submit" class="btn btn-warning"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button> 
 				    </div>
 				</div>
@@ -146,10 +154,10 @@
 	</div>
 
 	<!--全局JS -->
-	<script src="/bookshop/js/admin/share/jquery-3.2.1.min.js"></script>
-	<script src="/bookshop/js/admin/share/bootstrap.min.js"></script> 
-	<script src="/bookshop/js/admin/share/share.js"></script>
+	<script src="<%=request.getContextPath() %>/js/admin/share/jquery-3.2.1.min.js"></script>
+	<script src="<%=request.getContextPath() %>/js/admin/share/bootstrap.min.js"></script> 
+	<script src="<%=request.getContextPath() %>/js/admin/share/share.js"></script>
 	<!--私有JS-->
-	<script src="/bookshop/js/admin/share/cityDrop.js"></script>
+	<script src="<%=request.getContextPath() %>/js/admin/share/cityDrop.js"></script>
 
 </body>
