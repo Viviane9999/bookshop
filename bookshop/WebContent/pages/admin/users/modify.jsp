@@ -58,10 +58,11 @@
 			              	<div class="col-md-12 row">
 			              	<%
 			              		// 从user表中查询修改的用户
-			              		String users_idStr = request.getParameter("users_id");
-			              		int users_id = Integer.parseInt(users_idStr);
-			              		UsersDAO usersDAO = new UsersDAO();
-			              		Users user = usersDAO.getById(users_id);
+			              		//String users_idStr = request.getParameter("users_id");
+			              		//int users_id = Integer.parseInt(users_idStr);
+			              		//UsersDAO usersDAO = new UsersDAO();
+			              		//Users user = usersDAO.getById(users_id);
+			              		Users user = (Users)request.getAttribute("user");
 								// 显示要修改的用户
 								
 			              	%>
@@ -92,8 +93,10 @@
 								  <label class="control-label-required">职务</label>
 								  <select class="form-control" name="roles_id">
 								  <%
-								  RolesDAO rolesDAO = new RolesDAO();
-								  ArrayList<Roles> roles = rolesDAO.getAll();
+								  //RolesDAO rolesDAO = new RolesDAO();
+								  //ArrayList<Roles> roles = rolesDAO.getAll();
+								  ArrayList<Roles> roles = (ArrayList<Roles>)request.getAttribute("roles");
+								  
 								  for(int i = 0; i < roles.size(); i++){
 									  Roles role = roles.get(i);
 									  %>

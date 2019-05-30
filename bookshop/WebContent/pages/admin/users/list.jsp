@@ -66,8 +66,10 @@
 	                <tbody>
 	                <%
 	                //从DB的users表中查询出所有记录
-	                UsersDAO usersDAO = new UsersDAO();
-	                ArrayList<Users> users = usersDAO.getAll();
+	                //UsersDAO usersDAO = new UsersDAO();
+	                //ArrayList<Users> users = usersDAO.getAll();
+	                
+	                ArrayList<Users> users = (ArrayList<Users>)request.getAttribute("users");
 	                //显示查询得到的数据
 	                for(int i=0;i<users.size();i++){
 	                	Users user = users.get(i);
@@ -84,7 +86,7 @@
 	                    <td><%=user.getUsers_idNum() %></td>
 						<td><%=user.getUsers_mobile() %></td>
 	                    <td>
-	                        <a href="<%=request.getContextPath()%>/pages/admin/users/modify.jsp?users_id=<%=user.getUsers_id() %>"><button class="btn btn-warning" type="button">修改</button></a>
+	                        <a href="<%=request.getContextPath()%>/Admin/User/OpenModify?users_id=<%=user.getUsers_id() %>"><button class="btn btn-warning" type="button">修改</button></a>
 							<a href="<%=request.getContextPath()%>/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
 	                    </td>
 	                  	</tr>
