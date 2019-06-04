@@ -41,7 +41,7 @@
     
 	<div class="row">
 	   <div class="col-md-12">
-		  <form  action="<%=request.getContextPath() %>/pages/admin/users/modifySuccess.jsp" method="post">
+		  <form  action="<%=request.getContextPath() %>/Admin/User/Modify" method="post">
 			  			<div class="panel-group" id="accordion">
 				
 				<div class="panel panel-default">

@@ -34,34 +34,7 @@
 	</div>
     <!-- 页面内容体 -->
     <%
-    request.setCharacterEncoding("utf-8");
-   //从请求中获得更改后的用户数据
-    String users_id = request.getParameter("users_id");
-    String roles_id = request.getParameter("roles_id");
-    String users_name = request.getParameter("users_name");
-    String users_sex = request.getParameter("users_sex");
-    String users_idNum = request.getParameter("users_idNum");
-    String users_mobile = request.getParameter("users_mobile");
-    String users_address = request.getParameter("users_address");
-    String users_postcode = request.getParameter("users_postcode");
-    String users_portraitImg = request.getParameter("users_portraitImg");
-    String users_password = request.getParameter("users_password");
-    
-    //将更改后的用户数据更新到User表中对应记录
-    UsersDAO userDAO = new UsersDAO();
-    Users users = new Users();
-    users.setUsers_id(Integer.parseInt(users_id));
-    users.setRoles_id(Integer.parseInt(roles_id));
-    users.setUsers_name(users_name);
-    users.setUsers_sex(users_sex);
-    users.setUsers_idNum(users_idNum);
-    users.setUsers_mobile(users_mobile);
-    users.setUsers_address(users_address);
-    users.setUsers_postcode(users_postcode);
-    users.setUsers_portraitImg(users_portraitImg);
-    users.setUsers_password(users_password);
-    
-    userDAO.modify(users);
+
     
     
     
@@ -90,7 +63,7 @@
 			    </div>
 			    <div class="panel-footer">
 			    	 <div class="btn-group">
-						 <a href="<%=request.getContextPath() %>/pages/admin/users/list.jsp"><button type="button" class="btn btn-primary" onclick="javascript:window.history.back();"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
+						 <a href="<%=request.getContextPath() %>/Admin/User/List"><button type="button" class="btn btn-primary" onclick="javascript:window.history.back();"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
 					 </div>
 			    </div>
 			</div>
