@@ -131,6 +131,7 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("after UserServlet doGet");
 	}
 
 	/**

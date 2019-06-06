@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>CurrentTime</servlet-name>
     <servlet-class>cn.edu.nsu.bookshop.servlet.CurrentTime</servlet-class>
@@ -17,6 +18,7 @@
     <servlet-name>CurrentTime</servlet-name>
     <url-pattern>/CurrentTime</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>Table</servlet-name>
     <servlet-class>cn.edu.nsu.bookshop.servlet.Table</servlet-class>
@@ -25,6 +27,7 @@
     <servlet-name>Table</servlet-name>
     <url-pattern>/Table</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>UserListServlet</servlet-name>
     <servlet-class>cn.edu.nsu.bookshop.servlet.UserListServlet</servlet-class>
@@ -33,6 +36,7 @@
     <servlet-name>UserListServlet</servlet-name>
     <url-pattern>/UserList</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>cn.edu.nsu.bookshop.servlet.UserServlet</servlet-class>
@@ -41,4 +45,14 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/Admin/User/*</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>cn.edu.nsu.bookshop.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>/Admin/*</url-pattern>
+  </filter-mapping>
 </web-app>
+
