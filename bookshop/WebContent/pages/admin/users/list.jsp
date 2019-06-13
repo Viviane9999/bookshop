@@ -2,6 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="cn.edu.nsu.bookshop.db.last.users.UsersDAO"%>
 <%@page contentType="text/html; charset=utf-8" %>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,6 +66,27 @@
 	                  </tr>
 	                </thead>
 	                <tbody>
+	                
+	                <c:forEach items="${users}" var="user">
+	                	<tr>
+						<td>
+							<a href="#" rel="rs-dialog" data-target="bigPicModal" title="点击看大图">
+								<img src="<%=request.getContextPath()%> ${user.users_portraitImg}" class="img-thumbnail" alt="头像" width="50" height="50">
+							</a>
+						</td>
+	                    <td>${user.users_name}</td>
+						<td>${user.users_sex}</td>
+	                    <td>${user.roles_id}</td>
+	                    <td>${user.users_idNum}</td>
+						<td>${user.users_mobile}</td>
+	                    <td>
+	                        <a href="<%=request.getContextPath()%>/Admin/User/OpenModify?users_id=${user.users_id}"><button class="btn btn-warning" type="button">修改</button></a>
+							<a href="<%=request.getContextPath()%>/pages/admin/shares/success.html"><button class="btn btn-danger" type="button">禁用</button></a>
+	                    </td>
+	                  	</tr>
+	                </c:forEach>
+	                
+	                <!--
 	                <%
 	                //从DB的users表中查询出所有记录
 	                //UsersDAO usersDAO = new UsersDAO();
@@ -93,6 +116,7 @@
 	                	<% 
 	                }
 					%>
+	                -->
 	                  
 	                  
 	                  </tr>

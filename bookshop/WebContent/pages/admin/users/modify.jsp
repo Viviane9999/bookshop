@@ -4,6 +4,8 @@
 <%@page import="cn.edu.nsu.bookshop.db.last.users.Users"%>
 <%@page import="cn.edu.nsu.bookshop.db.last.users.UsersDAO"%>
 <%@page contentType="text/html; charset=utf-8" %>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +58,7 @@
 					<div id="collapse1" class="panel-collapse collapse in">
 						<div class="panel-body">
 			              	<div class="col-md-12 row">
+			              	<!--
 			              	<%
 			              		// 从user表中查询修改的用户
 			              		//String users_idStr = request.getParameter("users_id");
@@ -66,17 +69,17 @@
 								// 显示要修改的用户
 								
 			              	%>
-			              	
+			              	 -->
 			              	
 			              	
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">姓名</label>
-								  <input class="form-control" type="text" name="users_name" value="<%=user.getUsers_name() %>" placeholder="请输入人员的姓名">
+								  <input class="form-control" type="text" name="users_name" value="${user.users_name}" placeholder="请输入人员的姓名">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">密码</label>
-								  <input class="form-control" type="password" name="users_password" value="<%=user.getUsers_password() %>" placeholder="请输入人员的密码">
+								  <input class="form-control" type="password" name="users_password" value="${user.users_password}" placeholder="请输入人员的密码">
 								</div>
 								
 								
@@ -84,14 +87,18 @@
 								  <label class="control-label-required">性别</label>
 								  <select class="form-control" name="users_sex">
 								  
-								       <option value="男" <%=(user.getUsers_sex().equals("男"))?"selected":"" %>>男</option>
-								       <option value="女" <%=(user.getUsers_sex().equals("女"))?"selected":"" %>>女</option>
+								       <option value="男" ${(user.users_sex=="男")?"selected":"" }>男</option>
+								       <option value="女" ${(user.users_sex=="女")?"selected":"" }>女</option>
 								  </select>			
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">职务</label>
 								  <select class="form-control" name="roles_id">
+								  	<c:forEach items="${roles}" var="role">
+								  		<option value="${role.roles_id }" ${(user.roles_id==role.roles_id)?"selected":"" }>${role.roles_name }</option>
+								  	</c:forEach>
+								  <!--
 								  <%
 								  //RolesDAO rolesDAO = new RolesDAO();
 								  //ArrayList<Roles> roles = rolesDAO.getAll();
@@ -104,28 +111,28 @@
 									  <% 
 								  }
 								  %>
-								  
+								  -->
 								  </select>			
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">身份<br>证号</label>
-								  <input class="form-control" type="text" name="users_idNum" value="<%=user.getUsers_idNum() %>" placeholder="请输入人员的省份证号码">
+								  <input class="form-control" type="text" name="users_idNum" value="${user.users_idNum}" placeholder="请输入人员的省份证号码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">手机</label>
-								  <input class="form-control" type="text" name="users_mobile" value="<%=user.getUsers_mobile() %>" placeholder="请输入人员的手机号码">
+								  <input class="form-control" type="text" name="users_mobile" value="${user.users_mobile}" placeholder="请输入人员的手机号码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 									<label class="control-label-required">地址</label>
-									<textarea class="form-control" rows="4" cols="40" name="users_address" placeholder="请输入人员的地址"><%=user.getUsers_address() %></textarea>
+									<textarea class="form-control" rows="4" cols="40" name="users_address" placeholder="请输入人员的地址">${user.users_address}</textarea>
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
 								  <label class="control-label-required">邮编</label>
-								  <input class="form-control" type="text" name="users_postcode" value="<%=user.getUsers_postcode() %>" placeholder="请输入人员的邮政编码">
+								  <input class="form-control" type="text" name="users_postcode" value="${user.users_postcode}" placeholder="请输入人员的邮政编码">
 								</div>
 								
 								<div class="form-group col-md-6 form-inline" >
@@ -144,7 +151,7 @@
 			   <div class="panel panel-default">
 					<div class="panel-footer" style="text-align: center;">
 							 <button type="button" class="btn btn-primary" onclick="navTo('<%=request.getContextPath() %>/pages/admin/users/list.jsp')"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
-							 <input class="form-control" type="hidden" name="users_id" value="<%=user.getUsers_id() %>">
+							 <input class="form-control" type="hidden" name="users_id" value="${user_users_id }">
 							 <button type="submit" class="btn btn-warning"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button> 
 				    </div>
 				</div>
