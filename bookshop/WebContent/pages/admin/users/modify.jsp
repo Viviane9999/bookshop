@@ -151,7 +151,7 @@
 			   <div class="panel panel-default">
 					<div class="panel-footer" style="text-align: center;">
 							 <button type="button" class="btn btn-primary" onclick="navTo('<%=request.getContextPath() %>/pages/admin/users/list.jsp')"><i class="fa fa-fw fa-lg fa-times-circle"></i>返回</button>
-							 <input class="form-control" type="hidden" name="users_id" value="${user_users_id }">
+							 <input class="form-control" type="hidden" name="users_id" value="${user.users_id }">
 							 <button type="submit" class="btn btn-warning"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button> 
 				    </div>
 				</div>
