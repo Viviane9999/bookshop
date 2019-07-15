@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    border-right: 1px solid #E6E6E6;
+}
+.profile-main {
+    background: #fff;
+    width: 80%;
+    margin:2em auto;
+    padding: 0em 0em;
+    border-radius: 4px;
+}
+.logo{ text-align:center; margin:auto; padding:35px 0 35px 0;font-size:30px;}
+.logo img{max-width:65%;}
+.logo, .logo a{ color:#000000;}
+
+/* Menu style
+/*------------------------------------------*/
+.menu{ width:100%; padding:0px;margin:0px 0 50px 0;}
+.menu ul{ list-style:none; padding:0px; margin:0px; width:100%;}
+.menu ul li{ list-style:none; margin:3% 2% 3% 2%; padding:5.5% 0; width:28%;height:auto; float:left; display:block; text-align:center;border:1px #333333 solid;-webkit-border-radius: 200px;-moz-border-radius: 200px;border-radius: 200px;}
+.menu ul li a{ color:#000000; text-decoration:none;  text-align: center;} 
+.menu ul li a span{ display:block; text-align:center; font-size:11px; line-height:15px;font-weight: 1000;}
+.menu ul li img{ display:inline-block;max-width:50%;}

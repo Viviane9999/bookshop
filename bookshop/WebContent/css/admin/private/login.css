@@ -1,0 +1,51 @@
+.material-half-bg {
+	    height: 100vh;
+	    background-color: #e7e7e7;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    z-index: -1;
+	}
+.material-half-bg .cover {
+	    background-color: #009688;
+	    height: 50vh;
+	}
+	
+.form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-inline .form-control {
+    display: inline-block;
+    width: 30rem;
+    vertical-align: middle;
+}
+.control-label-norequired {
+    margin-bottom: 0;
+    vertical-align: middle;
+    padding: 15px 10px;
+    color: black;
+	font-size: 1.5rem;
+}
+.titleLabel
+{
+	font-size: 52px;
+	font-weight: 400;
+}
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+}
